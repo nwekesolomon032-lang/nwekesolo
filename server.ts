@@ -27,7 +27,7 @@ const PORT = resolveServerPort();
 const rootDir = path.resolve(import.meta.dirname);
 
 async function startServer() {
-  const app = await createServerApp();
+  const app = createServerApp();
 
   if (!isProduction) {
     const {createServer: createViteServer} = await import('vite');

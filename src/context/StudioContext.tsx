@@ -159,9 +159,10 @@ export function StudioProvider({children}: {children: React.ReactNode}) {
   }, []);
 
   useEffect(() => {
-    const projectMatch = activeProjectSlug
-      ? publishedProjects.find((p) => p.slug === activeProjectSlug)
-      : null;
+    const projectMatch =
+      activeRoute === '/projects' && activeProjectSlug
+        ? publishedProjects.find((p) => p.slug === activeProjectSlug)
+        : null;
 
     if (projectMatch) {
       document.title = `${projectMatch.title} — Projects — SOLMONIX STUDIO`;

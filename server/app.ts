@@ -236,7 +236,7 @@ function generateReferenceNumber(): string {
   return `SMX-${token}`;
 }
 
-export async function createServerApp() {
+export function createServerApp() {
   const app = express();
 
   // Security headers for uploaded assets and responses
